@@ -7,7 +7,7 @@
 		<link type="text/css" rel="stylesheet" href="css/style.css">
 		<script>
 			$(document).ready(function(){
-				$('h3').hide();	
+				$('h3').show();	
 			});
 			
 		</script>
@@ -16,22 +16,39 @@
 	</head>
 
 	<body>
-			<form class="b-anketa">
-				<table class="">
+			<form class="b-anketa-form">
+				<table class="table">
 					<tbody>
 						<tr>
 							<td colspan="2">
 								<h3>Заполните анкету</h3>
-						<tr>
-							<td class="">Вопрос 1
-							<td class="">Год рождения
-						<tr>
-							<td class="">
-							<td class="">
-									<textarea></textarea>
+						
+							<tr>
+								<td colspan="2" class="b-b-table__number"><em>Вопрос 1</em>
+									<span onclick="$(this).parent().parent().next().toggle('noraml');">V</span>
+							<tr>
+								<td class="b-table__question"><b>Год рождения.</b>
+								<td class="b-table__answer">
+										<textarea name="year"></textarea>
+							
+							<tr>
+								<td colspan="2" class="b-table__number"><em>Вопрос 2</em>
+									<span onclick="$(this).parent().parent().next().toggle('normal');">V</span>
+							<tr>
+								<td class="b-table__question"><b>Город, в котором вы живёте.</b>
+								<td class="b-table__answe">
+									<textarea name="city"></textarea>
+
+							<tr>
+								<td colspan="2" class="b-table__number"><em>Вопрос 3</em>
+									<span onclick="$(this).parent().parent().next().toggle('noraml');">V</span>
+							<tr>
+								<td class="b-table__question"><b>Вуз, факультет, специальность, кафедра.</b>
+								<td class="b-table__answer">
+										<textarea name="education"></textarea>
 					</tbody>
 				</table>
-
+				<input type="submit" class="b-anketa-form__submit">
 			</form>
 
 	</body>
