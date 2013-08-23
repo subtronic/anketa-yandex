@@ -13,14 +13,14 @@ tr{
 }
 
 .b-table__number{
-	background-color: #e4e4e4;
+	background-color:  #e5e5e5;
 	padding:5px;
 }
 .b-table__number em{
 
 }
 
-.table td{
+.b-table td{
 	vertical-align:top;
 }
 .b-acordion{
@@ -32,12 +32,27 @@ tr{
 	background-repeat: no-repeat;
 	cursor: pointer;
 }
-.b-anketa-form__submit{
+.b-anketa-form__action{
 	text-align: center;
 	background-color: #ccc;
+	padding:5px;
+}
+.b-anketa-form__action input{
+	padding:3px;
+	border:1px solid #ccc;
+	border-radius: 3px;
+
+}
+.b-anketa-form__action input:hover{
+	background-color: #fff;
+}
+.b-anketa-form__submit_button{
+	
+}
+.b-anketa-form__clear_button{
 }
 
-.table{
+.b-table{
 	margin:0px auto;
 	width:800px;
 }
@@ -58,9 +73,54 @@ tr{
 .wrapper{
 	margin:0px auto;
 }
-.table textarea {
+.b-table textarea {
 	resize:vertical;
 	width:97%;
 	height: 100px;
 	padding:5px;
+}
+.b-table__single-text{
+	max-width: 30%;
+}
+.b-table__single-text p{
+	margin-top:1em;
+}
+.b-anketa-form__input{
+	width:100%;
+	border-radius: 2px;
+	outline: 0;
+	border:0;
+	padding-left: .3em;
+}
+.b-anketa-form__input:focus{
+}
+.b-anketa-form__input-box{
+	border:1px solid;
+	border-color: #a3a3a3 #c6c6c6 #e5e5e5;
+	padding-right: .3em;
+	box-shadow: inset 0 1px 1px #cfcfcf;
+	position: relative;
+	display: block;
+	margin-top:1em;
+}
+.b-anketa-form__input-error{
+	border-color:red;
+}
+.b-progress-bar{
+	width:800px;
+}
+.b-progress-bar__blank_bar{
+     width: 100%;
+     height: 5px;
+     background:white;
+     border:1px solid #e5e5e5;
+}
+
+.b-progress-bar__filled_bar{
+     width: 0%;
+     height: 100%;
+     background:lime;
+}
+.b-progress-bar__text{
+	text-align: center;
 }
