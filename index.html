@@ -7,15 +7,25 @@
 		<link type="text/css" rel="stylesheet" href="css/style.css">
 		<script>
 			$(document).ready(function(){
-				$('h3').show();	
+				$('.b-acordion').click(function(){
+					if($(this).css('backgroundImage').indexOf('arrow_u.png') + 1) {
+						$(this).css('backgroundImage',	'url(img/arrow_d.png)');
+					}else {
+						$(this).css('backgroundImage',	'url(img/arrow_u.png)');
+					}
+					$(this).parent().parent().next().toggle('normal');
+				});
 			});
-			
 		</script>
 
 
 	</head>
 
 	<body>
+		<!--
+	Добавить остальные вопросы. Добавить стили. Сделать прогресс бар(сверху экрана), проверка ввода, навигация по вопросам(1,2,3, > и <)
+		-->
+			<div class="wrapper">
 			<form class="b-anketa-form">
 				<table class="table">
 					<tbody>
@@ -24,33 +34,96 @@
 								<h3>Заполните анкету</h3>
 						
 							<tr>
-								<td colspan="2" class="b-b-table__number"><em>Вопрос 1</em>
-									<span onclick="$(this).parent().parent().next().toggle('noraml');">V</span>
+								<td colspan="2" class="b-table__number"><em>Вопрос 1</em>
+									<div class="b-acordion"> </div>
 							<tr>
 								<td class="b-table__question"><b>Год рождения.</b>
 								<td class="b-table__answer">
 										<textarea name="year"></textarea>
+							<tr> <td colspan="2"><hr class="b-separator">
 							
 							<tr>
 								<td colspan="2" class="b-table__number"><em>Вопрос 2</em>
-									<span onclick="$(this).parent().parent().next().toggle('normal');">V</span>
+									<div class="b-acordion"> </div>
 							<tr>
-								<td class="b-table__question"><b>Город, в котором вы живёте.</b>
+								<td class="b-table__question"><b>Город, в котором Вы живёте.</b>
 								<td class="b-table__answe">
 									<textarea name="city"></textarea>
+							<tr> <td colspan="2"><hr class="b-separator">
 
 							<tr>
 								<td colspan="2" class="b-table__number"><em>Вопрос 3</em>
-									<span onclick="$(this).parent().parent().next().toggle('noraml');">V</span>
+									<div class="b-acordion"  > </div>
 							<tr>
 								<td class="b-table__question"><b>Вуз, факультет, специальность, кафедра.</b>
 								<td class="b-table__answer">
 										<textarea name="education"></textarea>
+							<tr> <td colspan="2"><hr class="b-separator">
+
+							<tr>
+								<td colspan="2" class="b-table__number"><em>Вопрос 4</em>
+									<div class="b-acordion"  > </div>
+							<tr>
+								<td class="b-table__question"><b>Вуз, факультет, специальность, кафедра.</b>
+								<td class="b-table__answer">
+										<textarea name="education"></textarea>
+							<tr> <td colspan="2"><hr class="b-separator">
+
+							<tr>
+								<td colspan="2" class="b-table__number"><em>Вопрос 5</em>
+									<div  class="b-acordion"  > </div>
+							<tr>
+								<td class="b-table__question"><b>Вуз, факультет, специальность, кафедра.</b>
+								<td class="b-table__answer">
+										<textarea name="education"></textarea>
+							<tr> <td colspan="2"><hr class="b-separator">
+
+							<tr>
+								<td colspan="2" class="b-table__number"><em>Вопрос 6</em>
+									<div  class="b-acordion"  > </div>
+							<tr>
+								<td class="b-table__question"><b>Вуз, факультет, специальность, кафедра.</b>
+								<td class="b-table__answer">
+										<textarea name="education"></textarea>
+							<tr> <td colspan="2"><hr class="b-separator">
+
+							<tr>
+								<td colspan="2" class="b-table__number"><em>Вопрос 7</em>
+									<div  class="b-acordion"  > </div>
+							<tr>
+								<td class="b-table__question"><p>Вы — пилот грузового межгалактического корабля. Ваша работа — перевозка грузов с одной планету на другую. Грузоподъемность вашего корабля ограничена, поэтому за один рейс вы можете перевезти не более N кг полезного груза. Ваш корабль умеет сообщать свое состояние (местоположение и степень загруженности), а также летать в любую точку пространства. Каждая планета может содержать на себе груз, который можно взять. Также на каждой планете груз можно оставить .</p>
+								<p>Задание</p>
+								
+								<p>Даны незавершенные интерфейсы корабля и планеты. Напишите недостающий код.</p>
+								
+								<p>Полное условие задачи доступно на</p>
+								
+								<p>	<a href="https://github.com/yandex-shri/introtask-space">https://github.com/yandex-shri/introtask-space</a>.</p>
+								
+								<p>В качестве ответа на вопрос пришлите ссылку на <a href="http://jsfiddle.net/">http://jsfiddle.net/</a> с вашим кодом или на ваш репозиторий на <a href="https://github.com/">https://github.com/</a>.
+								<td class="b-table__answer">
+										<textarea name="education"></textarea>
+							<tr> <td colspan="2"><hr class="b-separator">
+
+							<tr>
+								<td colspan="2" class="b-table__number"><em>Вопрос 8</em>
+									<div  class="b-acordion"  > </div>
+							<tr>
+								<td class="b-table__question"><b>Вуз, факультет, специальность, кафедра.</b>
+								<td class="b-table__answer">
+										<textarea name="education"></textarea>
+							<tr> <td colspan="2"><hr class="b-separator">
+
+							<tr>
+								<td class="b-anketa-form__submit" colspan="2">
+									<input type="submit" >
+									<input type="button" value="Очистить">
+
 					</tbody>
 				</table>
-				<input type="submit" class="b-anketa-form__submit">
-			</form>
 
+			</form>
+		</div>
 	</body>
 
 </html>

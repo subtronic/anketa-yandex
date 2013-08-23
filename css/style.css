@@ -5,5 +5,62 @@
 	padding:0px;
 }
 body{
-	font:Arial,Helvetica,sans-serif;
+	font: 0.8em Arial,Helvetica,sans-serif;
+}
+
+tr{
+	text-align: left;
+}
+
+.b-table__number{
+	background-color: #e4e4e4;
+	padding:5px;
+}
+.b-table__number em{
+
+}
+
+.table td{
+	vertical-align:top;
+}
+.b-acordion{
+	float:right;
+	width: 12px;
+	height: 9px;
+	margin:3px 3px;
+	background-image: url(../img/arrow_d.png);
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+.b-anketa-form__submit{
+	text-align: center;
+	background-color: #ccc;
+}
+
+.table{
+	margin:0px auto;
+	width:800px;
+}
+.b-table__question {
+	max-width: 200px;
+}
+.b-table__question p{
+	line-height: 1.4em;
+}
+
+.b-separator{
+	color:#e4e4e4;
+	margin:10px 0;
+	border-style: solid;
+	border-width: 1px 0 0;
+}
+
+.wrapper{
+	margin:0px auto;
+}
+.table textarea {
+	resize:vertical;
+	width:97%;
+	height: 100px;
+	padding:5px;
 }
