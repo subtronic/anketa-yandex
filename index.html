@@ -7,6 +7,8 @@
 		<link type="text/css" rel="stylesheet" href="css/style.css">
 		<script>
 			$(document).ready(function(){
+				var all=$('.b-anketa-form').find('[type="text"]').length+$('.b-anketa-form').find('textarea').length;
+				$('.b-progress-bar__text').html('Заполнено 0 из '+all+' вопросов');
 				$('.b-acordion').click(function(){
 					if($(this).css('backgroundImage').indexOf('arrow_u.png') + 1) {
 						$(this).css('backgroundImage',	'url(img/arrow_d.png)');
@@ -17,16 +19,17 @@
 				});
 				$('.email').change(function(){
 					regexp = /[a-z0-9!$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|ru|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)\b/;
-					//console.log($(this).val().match(regexp));
 					if($(this).val().match(regexp)===null){
 						$(this).parent().addClass('b-anketa-form__input-error');
 					}else{
 						$(this).parent().removeClass('b-anketa-form__input-error');
 					}
 				});
+
+				$('textareayeaer_education')
 				$('.b-anketa-form').find('input,textarea,select').change(function(){
 					var sum=0;
-					var all=$('.b-anketa-form').find('[type="text"]').length+$('.b-anketa-form').find('textarea').length;
+					
 					$('.b-anketa-form').find('[type="text"]').each(function(){	
 						if($(this).val()!=''){sum++;}
 					});
@@ -37,10 +40,23 @@
 
 					var str='Заполнено '+sum+' из '+all+' вопросов';
 					$('.b-progress-bar__text').html(str);
-					$('.b-progress-bar__filled_bar').css('width',((sum/all)*100+'%'))
+					$('.b-progress-bar__filled_bar').css('width',((sum/all)*100+'%'));
+
+				});
+
+				$('.b-anketa-form__clear_button').click(function(){
+					$('.b-anketa-form').find('input,textarea,select').each(function(){
+						if(!$(this).hasClass('b-anketa-form__submit_button') && !$(this).hasClass('b-anketa-form__clear_button')){console.log($(this).val());$(this).val('');}
+						$('.b-progress-bar__text').html('Заполнено 0 из '+all+' вопросов');
+						$('.b-progress-bar__filled_bar').css('width','0%');
+					});
 
 				});
 			});
+
+		function Check_form(el){
+
+		}
 		</script>
 
 
@@ -48,7 +64,7 @@
 
 	<body>
 		<!--
-	Добавить остальные вопросы. Добавить стили. Сделать прогресс бар(сверху экрана), проверка ввода, навигация по вопросам(1,2,3, > и <)
+	Проверка ввода и проверка перед отправкой + ajax отправка
 		-->
 			<div class="wrapper">
 			<form class="b-anketa-form">
@@ -91,7 +107,7 @@
 							<tr>
 								<td class="b-table__question"><b>Год окончания вуза.</b>
 								<td class="b-table__answer">
-										<textarea name="yeae_education"></textarea>
+										<textarea name="yeaer_education"></textarea>
 							<tr> <td colspan="2"><hr class="b-separator">
 
 							<tr>
@@ -166,37 +182,37 @@
 								<td class="b-table__single-text">
 									<p>Ссылка на резюме</p>
 								<td>
-									<span class="b-anketa-form__input-box"><input class="b-anketa-form__input"type="text"></span>
+									<span class="b-anketa-form__input-box"><input name="resume_link" class="b-anketa-form__input"type="text"></span>
 							
 							<tr>
 								<td class="b-table__single-text">
 									<p>Ссылка на профиль в Моем Круге</p>
 								<td>
-									<span class="b-anketa-form__input-box"><input class="b-anketa-form__input"type="text"></span>
+									<span class="b-anketa-form__input-box"><input name="link_Kryg" class="b-anketa-form__input"type="text"></span>
 
 							<tr>
 								<td class="b-table__single-text">
 									<p>Имя, Фамилия</p>
 								<td>
-									<span class="b-anketa-form__input-box"><input class="b-anketa-form__input"type="text"></span>
+									<span class="b-anketa-form__input-box"><input name="name" class="b-anketa-form__input"type="text"></span>
 
 							<tr>
 								<td class="b-table__single-text">
 									<p>Телефон</p>
 								<td>
-									<span class="b-anketa-form__input-box"><input class="b-anketa-form__input"type="text"></span>
+									<span class="b-anketa-form__input-box"><input name="phone" class="b-anketa-form__input"type="text"></span>
 
 							<tr>
 								<td class="b-table__single-text">
 									<p>Email</p>
 								<td>
-									<span class="b-anketa-form__input-box"><input class="b-anketa-form__input email" type="text"></span>
+									<span class="b-anketa-form__input-box"><input name="email" class="b-anketa-form__input email" type="text"></span>
 
 							<tr>
 								<td class="b-table__single-text">
 									<p>Дополнительные сведения</p>
 								<td>
-									<span class="b-anketa-form__input-box"><input class="b-anketa-form__input" type="text"></span>
+									<span class="b-anketa-form__input-box"><input name="additional" class="b-anketa-form__input" type="text"></span>
 
 							<tr>
 								<td colspan="2">
